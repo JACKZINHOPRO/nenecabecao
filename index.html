@@ -1,67 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site - Estrutura</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Site - Etapa 1</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #111;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    /* Container da tela de entrada */
+    #landing {
+        text-align: center;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    #landing.show {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+    }
+
+    button {
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        border: none;
+        background-color: #e50914;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    button:hover {
+        background-color: #b00610;
+        transform: scale(1.05);
+    }
+
+    /* Fade out ao clicar no botão */
+    #landing.fade-out {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+</style>
 </head>
 <body>
 
-<!-- 1️⃣ Estrutura base -->
-<section id="estrutura-base">
+<!-- 1️⃣ Estrutura Base com animação -->
+<section id="landing">
     <header>
         <h1>Bem-vindo ao meu site</h1>
     </header>
-    <button>Entrar</button>
-    <!-- Aqui futuramente adicionaremos a transição -->
+    <button onclick="entrar()">Entrar</button>
 </section>
 
-<!-- 2️⃣ Tela das escolhas -->
-<section id="tela-escolhas">
-    <h2>Escolha uma opção</h2>
-    <button>Fotos zuadas</button>
-    <button>Fotos que eu gosto</button>
-</section>
+<script>
+    const landing = document.getElementById('landing');
 
-<!-- 3️⃣ Galeria + textos -->
-<section id="galeria-textos">
-    <h2>Galeria</h2>
-    <div>
-        <img src="foto1.jpg" alt="Foto 1">
-        <img src="foto2.jpg" alt="Foto 2">
-        <img src="foto3.jpg" alt="Foto 3">
-    </div>
-    <div>
-        <img src="foto4.jpg" alt="Foto 4">
-        <img src="foto5.jpg" alt="Foto 5">
-        <img src="foto6.jpg" alt="Foto 6">
-    </div>
-    <p>Textos que aparecem ao clicar nas fotos (placeholder)</p>
-</section>
+    // Animação de entrada
+    window.onload = () => {
+        landing.classList.add('show');
+    }
 
-<!-- 4️⃣ Jovens Titans -->
-<section id="jovens-titans">
-    <h2>Jovens Titans</h2>
-    <div>
-        <div>
-            <h3>Personagem 1</h3>
-            <img src="personagem1.jpg" alt="Personagem 1">
-            <p>Descrição do personagem 1</p>
-        </div>
-        <div>
-            <h3>Personagem 2</h3>
-            <img src="personagem2.jpg" alt="Personagem 2">
-            <p>Descrição do personagem 2</p>
-        </div>
-    </div>
-</section>
-
-<!-- 5️⃣ Final emocional -->
-<section id="final-emocional">
-    <h2>Eu nunca vou te deixar.</h2>
-    <img src="foto-crianca.jpg" alt="Foto criança">
-    <p>Frase final (placeholder)</p>
-</section>
+    // Função do botão "Entrar" com fade out
+    function entrar() {
+        landing.classList.add('fade-out');
+        setTimeout(() => {
+            alert("Aqui você pode avançar para a tela das escolhas!");
+            // futuramente trocar por mostrar a próxima seção
+        }, 500);
+    }
+</script>
 
 </body>
 </html>
