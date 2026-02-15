@@ -12,20 +12,19 @@
 <section id="landing">
     <header>
         <h1>
-Para o nenê cabecão
-Eu poderia começar esse site de mil formas diferentes…
-
-Mas a verdade é simples:
-
+Para o nenê cabeção<br>
+Eu poderia começar esse site de mil formas diferentes…<br><br>
+Mas a verdade é simples:<br><br>
 É sobre você.
         </h1>
     </header>
     <button id="entrar-btn">Entrar</button>
 </section>
 
+
 <!-- Etapa 2: Tela das escolhas -->
 <section id="escolhas" class="hidden">
-    <h2>Escolha uma opção</h2>
+    <h2>Escolha com cuidado...</h2>
     <div class="botoes-escolhas">
         <button class="btn-roxo" onclick="mostrarGaleria('zuadas')">Fotos zuadas</button>
         <button class="btn-vermelho" onclick="mostrarGaleria('gosto')">Fotos que eu gosto</button>
@@ -35,11 +34,28 @@ Mas a verdade é simples:
 <!-- Etapa 3: Galeria -->
 <section id="galeria" class="hidden">
     <h2 id="galeria-titulo"></h2>
-    <div class="fotos-container" id="fotos-container">
-        <!-- Fotos vão aparecer aqui dinamicamente -->
-    </div>
-    <button onclick="voltarEscolhas()">Voltar</button>
+    <div class="fotos-container" id="fotos-container"></div>
+    <button onclick="confirmarFinal()">Finalizar</button>
 </section>
+
+<!-- Confirmação antes do final -->
+<section id="confirmacao" class="hidden">
+    <h2>Tem certeza que quer continuar?</h2>
+    <div class="botoes-escolhas">
+        <button class="btn-roxo" onclick="mostrarFinal()">Sim</button>
+        <button class="btn-vermelho" onclick="voltarGaleria()">Não</button>
+    </div>
+</section>
+
+<!-- Etapa 4: Final -->
+<section id="final" class="hidden">
+    <img src="crianca.jpg" alt="Você criança" id="foto-final">
+    <h2>Eu nunca vou te deixar.</h2>
+    <p id="final-frase">Era o sonho desse garotinho ter uma princesa como você.</p>
+</section>
+
+<!-- Corações -->
+<div id="coracoes-container"></div>
 
 <script src="script.js"></script>
 </body>
