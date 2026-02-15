@@ -17,8 +17,21 @@ document.getElementById('entrar-btn').addEventListener('click', () => {
 });
 
 // Jovens Titãs - clicar nos casais
-document.getElementById('ravena-mutano').addEventListener('click', () => criarCoracoes('roxo'));
-document.getElementById('estelar-robin').addEventListener('click', () => criarCoracoes('rosa'));
+document.getElementById('ravena-mutano').addEventListener('click', () => {
+    criarCoracoes('roxo');
+    setTimeout(() => {
+        titans.classList.add('hidden');
+        escolhas.classList.remove('hidden');
+    }, 1000);
+});
+
+document.getElementById('estelar-robin').addEventListener('click', () => {
+    criarCoracoes('rosa');
+    setTimeout(() => {
+        titans.classList.add('hidden');
+        escolhas.classList.remove('hidden');
+    }, 1000);
+});
 
 // Função para criar corações
 function criarCoracoes(cor) {
