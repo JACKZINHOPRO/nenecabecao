@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para o nenê cabecão</title>
+<title>Para o nenê cabeção</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Etapa 1: Landing -->
+<!-- 1️⃣ Tela Inicial -->
 <section id="landing">
     <header>
         <h1>
@@ -21,8 +21,36 @@ Mas a verdade é simples:<br><br>
     <button id="entrar-btn">Entrar</button>
 </section>
 
+<!-- 2️⃣ Tela Jovens Titãs -->
+<section id="titans" class="hidden">
+    <h2>Escolha seu casal favorito</h2>
+    <div class="casal-container">
+        <!-- Ravena & Mutano -->
+        <div class="casal" id="ravena-mutano">
+            <img src="ravena-mutano.jpg" alt="Ravena & Mutano">
+            <div class="caracteristicas">
+                <p>Ela sente muito, mas guarda para si.</p>
+                <p>Ele provoca sorriso até nos dias difíceis.</p>
+                <p>Ele traz leveza, ela traz profundidade.</p>
+                <p>Ele insiste, ela observa.</p>
+                <p>Amor que nasce da amizade verdadeira.</p>
+            </div>
+        </div>
+        <!-- Estelar & Robin -->
+        <div class="casal" id="estelar-robin">
+            <img src="estelar-robin.jpg" alt="Estelar & Robin">
+            <div class="caracteristicas">
+                <p>Ele é focado, disciplinado e protetor.</p>
+                <p>Ela é intensa, carinhosa e coração aberto.</p>
+                <p>Ele pensa no futuro.</p>
+                <p>Ela vive o presente com amor.</p>
+                <p>Relação baseada em admiração</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- Etapa 2: Tela das escolhas -->
+<!-- 3️⃣ Tela de escolhas -->
 <section id="escolhas" class="hidden">
     <h2>Escolha com cuidado...</h2>
     <div class="botoes-escolhas">
@@ -31,14 +59,27 @@ Mas a verdade é simples:<br><br>
     </div>
 </section>
 
-<!-- Etapa 3: Galeria -->
+<!-- 4️⃣ Galeria -->
 <section id="galeria" class="hidden">
     <h2 id="galeria-titulo"></h2>
-    <div class="fotos-container" id="fotos-container"></div>
+    <div class="fotos-container" id="fotos-container">
+        <!-- Fotos serão inseridas via JS -->
+    </div>
+
+    <!-- Texto grande + versículo para "Fotos que eu gosto" -->
+    <p id="gosto-texto" class="foto-frase hidden">
+        Você ilumina minha vida e faz tudo valer a pena.<br>
+        Eu prometo te amar nos dias em que você não puder amar a si mesma, vou te encher de elogios, te chamar de linda até que você sinta isso. 
+        Vou estar ao seu lado nos momentos em que duvidar de si mesma, te lembrando do quanto você é incrível, especial e única. 
+        Você é minha melhor metade, merece todo o amor mais puro que eu tenho a oferecer, e nada menos que isso vai te alcançar. 
+        Com você, cada dia ganha sentido, e cada sorriso seu será meu combustível para te fazer sentir amada de verdade.<br><br>
+        <strong>Gênesis 2:18</strong> – "Não é bom que o homem esteja só; farei para ele alguém que o auxilie e lhe corresponda."
+    </p>
+
     <button onclick="confirmarFinal()">Finalizar</button>
 </section>
 
-<!-- Confirmação antes do final -->
+<!-- 5️⃣ Confirmação -->
 <section id="confirmacao" class="hidden">
     <h2>Tem certeza que quer continuar?</h2>
     <div class="botoes-escolhas">
@@ -47,14 +88,15 @@ Mas a verdade é simples:<br><br>
     </div>
 </section>
 
-<!-- Etapa 4: Final -->
+<!-- 6️⃣ Tela final -->
 <section id="final" class="hidden">
-    <img src="crianca.jpg" alt="Você criança" id="foto-final">
     <h2>Eu nunca vou te deixar.</h2>
+    <p>sabe porque?</p>
+    <img src="crianca.jpg" alt="Você criança" id="foto-final">
     <p id="final-frase">Era o sonho desse garotinho ter uma princesa como você.</p>
 </section>
 
-<!-- Corações -->
+<!-- Container de corações -->
 <div id="coracoes-container"></div>
 
 <script src="script.js"></script>
