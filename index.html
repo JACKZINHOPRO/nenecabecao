@@ -27,9 +27,18 @@ Mas a verdade é simples:
 <section id="escolhas" class="hidden">
     <h2>Escolha uma opção</h2>
     <div class="botoes-escolhas">
-        <button class="btn-roxo" onclick="selecionar('zuadas')">Fotos zuadas</button>
-        <button class="btn-vermelho" onclick="selecionar('gosto')">Fotos que eu gosto</button>
+        <button class="btn-roxo" onclick="mostrarGaleria('zuadas')">Fotos zuadas</button>
+        <button class="btn-vermelho" onclick="mostrarGaleria('gosto')">Fotos que eu gosto</button>
     </div>
+</section>
+
+<!-- Etapa 3: Galeria -->
+<section id="galeria" class="hidden">
+    <h2 id="galeria-titulo"></h2>
+    <div class="fotos-container" id="fotos-container">
+        <!-- Fotos vão aparecer aqui dinamicamente -->
+    </div>
+    <button onclick="voltarEscolhas()">Voltar</button>
 </section>
 
 <script src="script.js"></script>
