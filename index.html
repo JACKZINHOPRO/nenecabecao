@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- Tela de entrada -->
+<!-- Etapa 1: Landing -->
 <section id="landing">
     <header>
         <h1>
@@ -21,6 +21,15 @@ Mas a verdade é simples:
         </h1>
     </header>
     <button onclick="entrar()">Entrar</button>
+</section>
+
+<!-- Etapa 2: Tela das escolhas -->
+<section id="escolhas" class="hidden">
+    <h2>Escolha uma opção</h2>
+    <div class="botoes-escolhas">
+        <button onclick="selecionar('zuadas')">Fotos zuadas</button>
+        <button onclick="selecionar('gosto')">Fotos que eu gosto</button>
+    </div>
 </section>
 
 <script src="script.js"></script>
