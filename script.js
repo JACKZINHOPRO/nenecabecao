@@ -1,6 +1,5 @@
 // Seções
 const landing = document.getElementById('landing');
-const titans = document.getElementById('titans');
 const escolhas = document.getElementById('escolhas');
 const galeria = document.getElementById('galeria');
 const fotosContainer = document.getElementById('fotos-container');
@@ -9,57 +8,27 @@ const confirmacao = document.getElementById('confirmacao');
 const final = document.getElementById('final');
 const coracoesContainer = document.getElementById('coracoes-container');
 
-// Botão Entrar
+// 1️⃣ Botão Entrar
 document.getElementById('entrar-btn').addEventListener('click', () => {
     landing.classList.add('hidden');
-    titans.classList.remove('hidden');
+    escolhas.classList.remove('hidden');
     criarCoracoes('roxo'); // corações ao entrar
 });
 
-// Jovens Titãs - clicar nos casais
-document.getElementById('ravena-mutano').addEventListener('click', () => {
-    criarCoracoes('roxo');
-    setTimeout(() => {
-        titans.classList.add('hidden');
-        escolhas.classList.remove('hidden');
-    }, 1000);
-});
-
-document.getElementById('estelar-robin').addEventListener('click', () => {
-    criarCoracoes('rosa');
-    setTimeout(() => {
-        titans.classList.add('hidden');
-        escolhas.classList.remove('hidden');
-    }, 1000);
-});
-
+// 2️⃣ Função criar corações
 function criarCoracoes(cor) {
     for (let i = 0; i < 15; i++) {
         const heart = document.createElement('div');
-        heart.innerText = '❤️'; // emoji no lugar do clip-path
-        heart.style.position = 'absolute';
-        heart.style.fontSize = '25px';
+        heart.classList.add('heart', cor);
         heart.style.left = Math.random() * 90 + '%';
-        heart.style.top = Math.random() * 80 + '%';
-        heart.style.animationName = 'floatHeart';
-        heart.style.animationDuration = (1 + Math.random() * 2) + 's';
-        heart.style.pointerEvents = 'none';
-
-        if(cor === 'roxo') heart.style.color = 'purple';
-        if(cor === 'rosa') heart.style.color = 'pink';
-
-        document.getElementById('coracoes-container').appendChild(heart);
-
+        heart.style.animationDuration = 1 + Math.random() * 2 + 's';
+        coracoesContainer.appendChild(heart);
         setTimeout(() => heart.remove(), 3000);
     }
 }
 
-    }
-}
-
-// Função mostrar galeria
+// 3️⃣ Mostrar galeria
 function mostrarGaleria(tipo) {
-    titans.classList.add('hidden');
     escolhas.classList.add('hidden');
     galeria.classList.remove('hidden');
     fotosContainer.innerHTML = '';
@@ -98,19 +67,19 @@ function mostrarGaleria(tipo) {
     }
 }
 
-// Função de confirmar final
+// 4️⃣ Confirmar final
 function confirmarFinal() {
     galeria.classList.add('hidden');
     confirmacao.classList.remove('hidden');
 }
 
-// Voltar para galeria
+// 5️⃣ Voltar para galeria
 function voltarGaleria() {
     confirmacao.classList.add('hidden');
     galeria.classList.remove('hidden');
 }
 
-// Mostrar tela final
+// 6️⃣ Mostrar tela final
 function mostrarFinal() {
     confirmacao.classList.add('hidden');
     final.classList.remove('hidden');
