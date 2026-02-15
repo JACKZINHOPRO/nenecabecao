@@ -1,5 +1,6 @@
 // Seções
 const landing = document.getElementById('landing');
+const titans = document.getElementById('titans');
 const escolhas = document.getElementById('escolhas');
 const galeria = document.getElementById('galeria');
 const fotosContainer = document.getElementById('fotos-container');
@@ -8,14 +9,31 @@ const confirmacao = document.getElementById('confirmacao');
 const final = document.getElementById('final');
 const coracoesContainer = document.getElementById('coracoes-container');
 
-// 1️⃣ Botão Entrar
+// Botão Entrar
 document.getElementById('entrar-btn').addEventListener('click', () => {
     landing.classList.add('hidden');
-    escolhas.classList.remove('hidden');
+    titans.classList.remove('hidden');
     criarCoracoes('roxo'); // corações ao entrar
 });
 
-// 2️⃣ Função criar corações
+// Jovens Titãs - clicar nos casais
+document.getElementById('ravena-mutano').addEventListener('click', () => {
+    criarCoracoes('roxo');
+    setTimeout(() => {
+        titans.classList.add('hidden');
+        escolhas.classList.remove('hidden');
+    }, 1000);
+});
+
+document.getElementById('estelar-robin').addEventListener('click', () => {
+    criarCoracoes('rosa');
+    setTimeout(() => {
+        titans.classList.add('hidden');
+        escolhas.classList.remove('hidden');
+    }, 1000);
+});
+
+// Função para criar corações
 function criarCoracoes(cor) {
     for (let i = 0; i < 15; i++) {
         const heart = document.createElement('div');
@@ -27,8 +45,9 @@ function criarCoracoes(cor) {
     }
 }
 
-// 3️⃣ Mostrar galeria
+// Função mostrar galeria
 function mostrarGaleria(tipo) {
+    titans.classList.add('hidden');
     escolhas.classList.add('hidden');
     galeria.classList.remove('hidden');
     fotosContainer.innerHTML = '';
@@ -67,19 +86,19 @@ function mostrarGaleria(tipo) {
     }
 }
 
-// 4️⃣ Confirmar final
+// Função de confirmar final
 function confirmarFinal() {
     galeria.classList.add('hidden');
     confirmacao.classList.remove('hidden');
 }
 
-// 5️⃣ Voltar para galeria
+// Voltar para galeria
 function voltarGaleria() {
     confirmacao.classList.add('hidden');
     galeria.classList.remove('hidden');
 }
 
-// 6️⃣ Mostrar tela final
+// Mostrar tela final
 function mostrarFinal() {
     confirmacao.classList.add('hidden');
     final.classList.remove('hidden');
