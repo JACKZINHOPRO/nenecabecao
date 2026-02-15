@@ -169,17 +169,39 @@ button.btn-vermelho:hover {
     margin-bottom: 10px;
 }
 
-/* Corações */
+/* Container dos corações */
 #coracoes-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
-    z-index: 9999;
+    pointer-events: none; /* não atrapalha cliques */
+    z-index: 9999;        /* fica acima de tudo */
 }
 
+/* Coração */
 .heart {
     position: absolute;
-    width:
+    width: 25px;
+    height: 25px;
+    background: red;
+    clip-path: polygon(
+        50% 0%, 61% 14%, 75% 25%, 88% 39%, 
+        100% 50%, 88% 61%, 75% 75%, 61% 86%, 
+        50% 100%, 39% 86%, 25% 75%, 12% 61%, 
+        0% 50%, 12% 39%, 25% 25%, 39% 14%
+    );
+    animation-name: floatHeart;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+}
+
+.heart.roxo { background: purple; }
+.heart.rosa { background: pink; }
+
+@keyframes floatHeart {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-150px) scale(1.2); opacity: 0; }
+}
+
