@@ -33,15 +33,27 @@ document.getElementById('estelar-robin').addEventListener('click', () => {
     }, 1000);
 });
 
-// Função para criar corações
 function criarCoracoes(cor) {
     for (let i = 0; i < 15; i++) {
         const heart = document.createElement('div');
-        heart.classList.add('heart', cor);
+        heart.innerText = '❤️'; // emoji no lugar do clip-path
+        heart.style.position = 'absolute';
+        heart.style.fontSize = '25px';
         heart.style.left = Math.random() * 90 + '%';
-        heart.style.animationDuration = 1 + Math.random() * 2 + 's';
-        coracoesContainer.appendChild(heart);
+        heart.style.top = Math.random() * 80 + '%';
+        heart.style.animationName = 'floatHeart';
+        heart.style.animationDuration = (1 + Math.random() * 2) + 's';
+        heart.style.pointerEvents = 'none';
+
+        if(cor === 'roxo') heart.style.color = 'purple';
+        if(cor === 'rosa') heart.style.color = 'pink';
+
+        document.getElementById('coracoes-container').appendChild(heart);
+
         setTimeout(() => heart.remove(), 3000);
+    }
+}
+
     }
 }
 
