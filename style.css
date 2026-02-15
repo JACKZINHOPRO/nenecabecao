@@ -11,8 +11,18 @@ body, html {
     overflow: hidden;
 }
 
-#landing {
+section {
     text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Etapa 1: Landing */
+#landing {
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 1s ease, transform 1s ease;
@@ -21,6 +31,12 @@ body, html {
 #landing.show {
     opacity: 1;
     transform: scale(1);
+}
+
+#landing.fade-out {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 h1 {
@@ -46,8 +62,13 @@ button:hover {
     transform: scale(1.05);
 }
 
-#landing.fade-out {
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+/* Etapa 2: Botões escolhas */
+.botoes-escolhas {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.botoes-escolhas button {
+    width: 45%;
 }
